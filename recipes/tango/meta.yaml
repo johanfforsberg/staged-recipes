@@ -1,0 +1,35 @@
+{% set version = "9.2.2" %}
+{% set sha256 = "bd99f215a2fccbcb9f7dfb40ca23a9646e90ecf7bc6f84dac0412a6483bdd73b" %}
+
+package:
+  name: tango
+  version: {{ version }}
+
+source:
+  url: https://sourceforge.net/projects/tango-cs/files/tango-{{ version }}.tar.gz
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - libtool    
+    - gcc
+    - omniorb
+    - zeromq
+    - zlib
+    - python
+  run:
+    - omniorb
+    - zeromq
+
+about:
+  home: http://www.tango-controls.org
+  license: GPL2
+  license_file: COPYING
+  summary: A software toolkit for building control systems
+
+extra:
+  recipe-maintainers:
+    - johanfforsberg
+
